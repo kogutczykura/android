@@ -9,7 +9,12 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.MarkerOptions;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.function.Consumer;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -25,22 +30,44 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mapFragment.getMapAsync(this);
     }
 
-    /**
-     * Manipulates the map once available.
-     * This callback is triggered when the map is ready to be used.
-     * This is where we can add markers or lines, add listeners or move the camera. In this case,
-     * we just add a marker near Sydney, Australia.
-     * If Google Play services is not installed on the device, the user will be prompted to install
-     * it inside the SupportMapFragment. This method will only be triggered once the user has
-     * installed Google Play services and returned to the app.
-     */
+    static class Shop {
+        private final LatLng latLng;
+        private final String name;
+
+        public Shop(LatLng latLng, String name) {
+            this.latLng = latLng;
+            this.name = name;
+        }
+
+        public LatLng getLatLng() {
+            return latLng;
+        }
+
+        public String getName() {
+            return name;
+        }
+    }
+
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        final List<Shop> shops = Arrays.asList(
+                new Shop(new LatLng(51.751965, 19.458410), "Sklep 1"),
+                new Shop(new LatLng(51.781856, 19.431790), "Sklep 2"),
+                new Shop(new LatLng(51.794083, 19.483308), "Sklep 3")
+        );
+
+        final LatLngBounds.Builder boundsBuilder = new LatLngBounds.Builder();
+        shops.forEach(new Consumer<Shop>() {
+            @Override
+            public void accept(Shop shop) {
+                mMap.addMarker(new MarkerOptions().position(shop.getLatLng()).title(shop.getName()));
+                boundsBuilder.include(shop.getLatLng());
+            }
+        });
+
+        mMap.setLatLngBoundsForCameraTarget(boundsBuilder.build());
+        mMap.moveCamera(CameraUpdateFactory.newLatLngBounds(boundsBuilder.build(), 15));
     }
 }

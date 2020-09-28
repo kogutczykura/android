@@ -5,10 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 
-public class Logged extends AppCompatActivity {
+public class LoggedActivity extends AppCompatActivity {
 
     private ImageButton maps;
     private ImageButton bike;
@@ -25,7 +24,7 @@ public class Logged extends AppCompatActivity {
         maps.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Logged.this, MapsActivity.class);
+                Intent intent = new Intent(LoggedActivity.this, MapsActivity.class);
                 startActivity(intent);
             }
         });
@@ -34,7 +33,7 @@ public class Logged extends AppCompatActivity {
         bike.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Logged.this, Bike.class);
+                Intent intent = new Intent(LoggedActivity.this, BikeActivity.class);
                 startActivity(intent);
             }
         });
@@ -42,7 +41,7 @@ public class Logged extends AppCompatActivity {
         person.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Logged.this, Person.class);
+                Intent intent = new Intent(LoggedActivity.this, UserAccountActivity.class);
                 startActivity(intent);
             }
         });
@@ -50,7 +49,7 @@ public class Logged extends AppCompatActivity {
         docs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Logged.this, Docs.class);
+                Intent intent = new Intent(LoggedActivity.this, DocsActivity.class);
                 startActivity(intent);
             }
         });
@@ -58,7 +57,7 @@ public class Logged extends AppCompatActivity {
         settings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Logged.this, SettingsActivity.class);
+                Intent intent = new Intent(LoggedActivity.this, SettingsActivity.class);
                 startActivity(intent);
             }
         });
@@ -66,7 +65,7 @@ public class Logged extends AppCompatActivity {
         info.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Logged.this, Info.class);
+                Intent intent = new Intent(LoggedActivity.this, InfoActivity.class);
                 startActivity(intent);
             }
         });

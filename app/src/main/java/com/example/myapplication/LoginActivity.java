@@ -9,13 +9,19 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class Login extends AppCompatActivity {
+import com.example.myapplication.domain.User;
+import com.example.myapplication.domain.UserService;
+import com.example.myapplication.domain.UserServiceFactory;
+
+import java.util.Optional;
+
+public class LoginActivity extends AppCompatActivity {
 
     private Button buttonLogin;
     private EditText Name;
     private EditText Password;
     private TextView Info;
-   // private Integer counter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,15 +41,15 @@ public class Login extends AppCompatActivity {
     }
 
     private void validate(String userName, String userPassword) {
-        if((userName.equals("Agata")) && (userPassword.equals("ataga"))) {
-            Intent intent = new Intent(Login.this, Logged.class);
+        UserService userService = UserServiceFactory.getInstance(getApplicationContext());
+        Optional<User> user = userService.findByIdAndPassword(userName, userPassword);
+        if(user.isPresent()) {
+            userService.setCurrentlyLoginUser(user.get());
+            Intent intent = new Intent(LoginActivity.this, LoggedActivity.class);
             startActivity(intent);
         } else {
-        //    counter--;
-
             Info.setText("Invalid login or password");
-                buttonLogin.setEnabled(false);
-
+            buttonLogin.setEnabled(false);
         }
     }
 }

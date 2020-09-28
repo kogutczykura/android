@@ -6,12 +6,12 @@
     android:layout_height="match_parent"
     android:background="#FFFFFF"
     android:backgroundTint="#7495AE"
-    tools:context=".Login">
+    tools:context=".LoginActivity">
 
     <Button
         android:id="@+id/buttonLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
         android:layout_marginTop="73dp"
         android:layout_marginBottom="224dp"
         android:background="@drawable/roundedbutton"
@@ -24,8 +24,8 @@
 
     <EditText
         android:id="@+id/editTextTextPersonName"
-        android:layout_width="wrap_content"
-        android:layout_height="45dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
         android:layout_marginTop="276dp"
         android:ems="10"
         android:inputType="textPersonName"
@@ -39,8 +39,8 @@
 
     <EditText
         android:id="@+id/editTextTextPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="421dp"
+        android:layout_height="64dp"
         android:layout_marginTop="341dp"
         android:ems="10"
         android:inputType="textPassword"
