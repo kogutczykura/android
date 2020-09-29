@@ -5,9 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
-    android:backgroundTint="#FFFFFF"
-    tools:context=".LoggedActivity">
+    tools:context=".LoggedActivity"
+    android:background="@drawable/menuu">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -47,28 +46,30 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:adjustViewBounds="true"
-                android:backgroundTint="#FFFFFF"
                 android:scaleType="fitCenter"
                 app:layout_constraintBottom_toTopOf="@+id/maps"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/bike"
                 app:layout_constraintTop_toBottomOf="@+id/info"
-                app:srcCompat="@drawable/docs" />
+                app:srcCompat="@drawable/regulation"
+                android:layout_margin="8dp"
+                android:background="#66cccccc"/>
             <ImageButton
                 android:id="@+id/person"
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:adjustViewBounds="true"
-                android:backgroundTint="#FFFFFF"
                 android:scaleType="fitCenter"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/maps"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/bike"
-                app:srcCompat="@drawable/person" />
+                app:srcCompat="@drawable/man"
+                android:layout_margin="8dp"
+                android:background="#66cccccc"/>
         </LinearLayout>
 
         <LinearLayout
@@ -85,14 +86,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:adjustViewBounds="true"
-                android:backgroundTint="#FFFFFF"
                 android:scaleType="fitCenter"
                 app:layout_constraintBottom_toTopOf="@+id/person"
                 app:layout_constraintEnd_toStartOf="@+id/docs"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/settings"
-                app:srcCompat="@drawable/bike" />
+                app:srcCompat="@drawable/bicycle"
+                android:layout_margin="8dp"
+                android:background="#66cccccc"/>
 
 
             <ImageButton
@@ -101,14 +103,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:adjustViewBounds="true"
-                android:backgroundTint="#FFFFFF"
                 android:scaleType="fitCenter"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/person"
                 app:layout_constraintTop_toBottomOf="@+id/docs"
-                app:srcCompat="@drawable/maps" />
+                app:srcCompat="@drawable/address"
+                android:layout_margin="8dp"
+                android:background="#66cccccc"/>
         </LinearLayout>
 
         <LinearLayout
@@ -125,14 +128,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:adjustViewBounds="true"
-                android:backgroundTint="#FFFFFF"
                 android:scaleType="fitCenter"
                 app:layout_constraintBottom_toTopOf="@+id/bike"
                 app:layout_constraintEnd_toStartOf="@+id/info"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/logged"
-                app:srcCompat="@drawable/settings" />
+                app:srcCompat="@drawable/discovery"
+                android:layout_margin="8dp"
+                android:background="#66cccccc"/>
 
             <ImageButton
                 android:id="@+id/info"
@@ -140,17 +144,15 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
-                android:backgroundTint="#FFFFFF"
-                android:outlineAmbientShadowColor="#FFFFFF"
-                android:outlineSpotShadowColor="#FFFFFF"
                 android:scaleType="fitCenter"
                 app:layout_constraintBottom_toTopOf="@+id/docs"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/settings"
                 app:layout_constraintTop_toBottomOf="@+id/logged"
                 app:layout_constraintVertical_bias="0.953"
-                app:srcCompat="@drawable/info" />
+                app:srcCompat="@drawable/search"
+                android:layout_margin="8dp"
+                android:background="#66cccccc"/>
         </LinearLayout>
     </LinearLayout>
 </ScrollView>

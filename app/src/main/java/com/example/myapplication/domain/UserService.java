@@ -3,7 +3,6 @@ package com.example.myapplication.domain;
 import android.content.Context;
 
 import com.fasterxml.jackson.core.type.TypeReference;
-import com.google.android.gms.common.api.Api;
 
 import java.util.ArrayList;
 import java.util.List;

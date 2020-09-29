@@ -50,10 +50,16 @@ public class BikesRecycleViewAdapter extends RecyclerView.Adapter<BikesRecycleVi
         final Bike bike = bikes.get(position);
 
         TextView description = holder.description;
-        description.setText(bike.getName());
+        description.setText(bike.getDescription());
 
         ImageView picture = holder.picture;
         Picasso.get().load(bike.getImageUrl()).into(picture);
+
+        TextView name = holder.name;
+        name.setText(bike.getName());
+
+        TextView price = holder.price;
+        price.setText(bike.getPrice());
 
         if(this.onClickEnable) {
             holder.parent.setOnClickListener(new View.OnClickListener() {
@@ -79,13 +85,17 @@ public class BikesRecycleViewAdapter extends RecyclerView.Adapter<BikesRecycleVi
         public TextView description;
         public ImageView picture;
         public LinearLayout parent;
+        public TextView name;
+        public TextView price;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
+            name = (TextView) itemView.findViewById(R.id.name);
             description = (TextView) itemView.findViewById((R.id.description));
             picture = (ImageView) itemView.findViewById((R.id.picture));
             parent = (LinearLayout) itemView.findViewById(R.id.parent);
+            price = (TextView) itemView.findViewById(R.id.price);
         }
     }
 

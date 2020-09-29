@@ -4,9 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
-    android:backgroundTint="#7495AE"
-    tools:context=".LoginActivity">
+    tools:context=".LoginActivity"
+    android:background="@drawable/login">
 
     <Button
         android:id="@+id/buttonLogin"
@@ -20,6 +19,9 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword"
+        android:textColor="@color/cardview_dark_background"
+        android:textColorHint="@color/cardview_dark_background"
+        android:text="Login"
         tools:ignore="MissingConstraints" />
 
     <EditText
@@ -39,8 +41,8 @@
 
     <EditText
         android:id="@+id/editTextTextPassword"
-        android:layout_width="421dp"
-        android:layout_height="64dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
         android:layout_marginTop="341dp"
         android:ems="10"
         android:inputType="textPassword"
